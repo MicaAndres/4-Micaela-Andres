@@ -9,11 +9,11 @@ let cortinasOlivia= 300;
 let alfombraLavable= 400;
 let noQuiereMas = 0;
 let montoTotal;
-
 let totalBolsas=0;
 let totalParcial;
 let producto;
 let sumar;
+let diaEntrega = 1;
 
 
 function perchero(){
@@ -40,7 +40,7 @@ perchero()
 
 
 function sumarProd(cantProductos){   
-    sumar= parseInt(prompt("Quiere comprar otro producto? \n1 - Almohadon Sofia\n2 - Cubrecama queen\n3 - Cortinas Olivia\n4 - Alfombra lavable\n5 - No, gracias!"))
+    sumar= parseInt(prompt("Quiere comprar otro producto? \n1 - Almohadon Sofia\n2 - Cubrecama queen\n3 - Cortinas Olivia\n4 - Alfombra lavable\n5 - No, gracias!"));
 
     if(sumar === 1){
         sumarProducto = almohadonSofia;
@@ -53,7 +53,7 @@ function sumarProd(cantProductos){
     }else if (sumar === 5){        
         sumarProducto = noQuiereMas;
     }else{
-        alert("No ingreso ninguna opción correcta, vuelva a empezar.")
+        alert("No ingreso ninguna opción correcta, vuelva a empezar.");
     }
     totalParcial = cantProductos+sumarProducto;
   
@@ -62,18 +62,24 @@ sumarProd()
 
 function sumaTotal(){
     montoTotal = productoSeleccionados + sumarProducto;
-    alert('El monto total de su compra es de $ '+montoTotal)
+    alert('El monto total de su compra es de $ '+montoTotal);
 
 }
 sumaTotal()
 
+diaEntrega=parseInt(prompt('En cuantos dias desea recibir'));
+for(let i= 1; i <= diaEntrega; i++){
+    alert( 'Tu entrega llegará en ' + diaEntrega +' dia/s');
+    break;
+}
 
 function ticket(){
     let apellido= prompt("Ingrese su apellido");
     let direccion = prompt("Ingrese su calle");
     let bolsas= parseInt(prompt("Ingrese cuantas bolsas para regalo necesitará"));
+    
     if(apellido, direccion) {
-         alert('Enviaremos todo a Sra-Sr' + '\n*'  +apellido + '\n*en la calle ' +direccion + ' \n*en ' +bolsas + ' bolsa/s\n Gracias por comprar !')
+         alert('Enviaremos todo a Sra-Sr' + '\n*'  +apellido + '\n*en la calle ' +direccion + ' \n*en ' +bolsas + ' bolsa/s\n Gracias por comprar !');
 
 
     }else{
@@ -81,6 +87,15 @@ function ticket(){
     }
 }
 ticket()
+
+/*let productoDeco = parseInt(prompt("Ingrese cantidad de bolsas a necesitar."));
+for (let i=0; i < productoDeco; i++){
+    datos();
+    alert(totalBolsas = productoDeco+montoTotal);
+}
+datos()
+alert('El total de su compra es: '+montoTotal);*/
+
 
 
 
